@@ -1,0 +1,34 @@
+cabal-version: 2.2
+name:          bank-simulation
+version:       0.0.0.1
+synopsis:      Bank Simulation assignment for Holmusk
+author:        Puneet Pahuja
+maintainer:    er.puneetpahuja@gmail.com
+category:      CLI
+build-type:    Simple
+
+common common-lang
+  ghc-options:
+    -Wall -Wcompat -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wredundant-constraints
+
+  build-depends:      base >=4.12 && <5
+  default-extensions:
+    NamedFieldPuns
+    OverloadedStrings
+    RecordWildCards
+
+  default-language:   Haskell2010
+
+library
+  import:          common-lang
+  exposed-modules: Simulator
+  other-modules:
+    Constants
+    Types
+
+  build-depends:
+    , random
+    , vector
+
+  hs-source-dirs:  src
